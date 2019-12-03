@@ -1,4 +1,7 @@
-
+/**************************************
+* Copyright(c) 2019 ICheng Chen ³¯©ö¦¨ E14046583
+* All rights reserved.
+***************************************/
 #include "stdafx.h"
 #include "GameWindow.h"
 
@@ -13,17 +16,24 @@ void TickTacToe::GameWindow::initArray(array<int> ^array, int size)
 }
 
 void TickTacToe::GameWindow::checkWinner() {
-	if (isWin(circle_table) == true) {
-		stopGame();
-		System::Windows::Forms::MessageBox::Show("Player one Win");
-		watch->Stop();
+	if (player == first_player) {
+		if (isWin(circle_table) == true) {
+			stopGame();
+			System::Windows::Forms::MessageBox::Show("Player "+(first_player+1)+" Win");
+			watch->Stop();
+			return;
+		}
 	}
-	else if (isWin(cross_table)==true) {
-		stopGame();
-		System::Windows::Forms::MessageBox::Show("Player two Win");
-		watch->Stop();
+	else {
+		if (isWin(cross_table) == true) {
+			stopGame();
+			System::Windows::Forms::MessageBox::Show("Player " + (!first_player + 1) + " Win");
+			watch->Stop();
+			return;
+		}
 	}
-	else if (round == GAME_SIZE * GAME_SIZE) {
+	 
+	if (round == GAME_SIZE * GAME_SIZE) {
 		stopGame();
 		System::Windows::Forms::MessageBox::Show("EVEN, restart game.");
 		watch->Stop();
@@ -41,17 +51,19 @@ void TickTacToe::GameWindow::stopGame() {
 void TickTacToe::GameWindow::startGame(char player) {
 	initArray(circle_table, GAME_SIZE*GAME_SIZE);
 	initArray(cross_table, GAME_SIZE*GAME_SIZE);
-	this->button1->BackgroundImage = nullptr;
-	this->button2->BackgroundImage = nullptr;
-	this->button3->BackgroundImage = nullptr;
-	this->button4->BackgroundImage = nullptr;
-	this->button5->BackgroundImage = nullptr;
-	this->button6->BackgroundImage = nullptr;
-	this->button7->BackgroundImage = nullptr;
-	this->button8->BackgroundImage = nullptr;
-	this->button9->BackgroundImage = nullptr;
+	this->draw_area1->Invalidate();
+	this->draw_area2->Invalidate();
+	this->draw_area3->Invalidate();
+	this->draw_area4->Invalidate();
+	this->draw_area5->Invalidate();
+	this->draw_area6->Invalidate();
+	this->draw_area7->Invalidate();
+	this->draw_area8->Invalidate();
+	this->draw_area9->Invalidate();
+
 	round = 0;
 	this->player = player;
+	this->first_player = player;
 	this->status_label_player->Text = "player " + (player+1);
 	turn = CIRCLE;
 	gameStarted = true;
@@ -115,13 +127,9 @@ void TickTacToe::GameWindow::changePlayer() {
 	this->status_label_player->Text = "player " + (player + 1);
 }
 
-void TickTacToe::GameWindow::setImage(Button ^button) {
-	button->BackgroundImage = turn == CIRCLE ? circle_img : cross_img;
-	button->BackgroundImageLayout = ImageLayout::Stretch;
-}
+
 
 bool  TickTacToe::GameWindow::setTable(int index) {
-
 
 	if (circle_table[index] == 1 || cross_table[index] ==1) return false;
 

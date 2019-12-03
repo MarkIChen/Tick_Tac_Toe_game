@@ -1,4 +1,7 @@
-// Tick-Tac-Toe.cpp: �D�n�M���ɡC
+/**************************************
+* Copyright(c) 2019 ICheng Chen 陳易成 E14046583
+* All rights reserved.
+***************************************/
 
 #include "stdafx.h"
 #include "GameWindow.h"

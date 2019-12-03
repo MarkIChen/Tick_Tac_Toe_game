@@ -1,9 +1,8 @@
 ﻿  GameWindow.cpp
-z:\google drive\extended year\oop\hw4\vs\tick-tac-toe\tick-tac-toe\GameWindow.h(83): warning C4538: 'cli::array<int,1>': 不支援這種類型上的 const/volatile 限定詞
-GameWindow.cpp(65): warning C4538: 'cli::array<int,1>': 不支援這種類型上的 const/volatile 限定詞
-  Tick-Tac-Toe.cpp
-z:\google drive\extended year\oop\hw4\vs\tick-tac-toe\tick-tac-toe\GameWindow.h(83): warning C4538: 'cli::array<int,1>': 不支援這種類型上的 const/volatile 限定詞
-  正在產生程式碼...
+z:\google drive\extended year\oop\hw4\vs\tick-tac-toe\tick-tac-toe\GameWindow.h(88): warning C4538: 'cli::array<int,1>': 不支援這種類型上的 const/volatile 限定詞
+GameWindow.cpp(65): warning C4800: 'char': 強制將 bool 的值定為 'true' 或 'false' (效能警告)
+GameWindow.cpp(66): warning C4800: 'char': 強制將 bool 的值定為 'true' 或 'false' (效能警告)
+GameWindow.cpp(77): warning C4538: 'cli::array<int,1>': 不支援這種類型上的 const/volatile 限定詞
   AssemblyInfo.obj : Managed 程式碼存在時不支援 /DEBUG:FASTLINK; 正在以 /DEBUG:FULL 重新啟動連結
   Tick-Tac-Toe.vcxproj -> Z:\Google Drive\Extended year\OOP\hw4\VS\Tick-Tac-Toe\Debug\Tick-Tac-Toe.exe
   Tick-Tac-Toe.vcxproj -> Z:\Google Drive\Extended year\OOP\hw4\VS\Tick-Tac-Toe\Debug\Tick-Tac-Toe.pdb (Partial PDB)

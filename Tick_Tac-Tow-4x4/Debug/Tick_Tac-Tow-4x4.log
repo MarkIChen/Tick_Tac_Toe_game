@@ -1,12 +1,9 @@
-﻿  stdafx.cpp
-  AssemblyInfo.cpp
-  GameWindow.cpp
-z:\google drive\extended year\oop\hw4\vs\tick-tac-toe\tick_tac-tow-4x4\GameWindow.h(89): warning C4538: 'cli::array<int,1>': 不支援這種類型上的 const/volatile 限定詞
-GameWindow.cpp(76): warning C4538: 'cli::array<int,1>': 不支援這種類型上的 const/volatile 限定詞
+﻿  GameWindow.cpp
+z:\google drive\extended year\oop\hw4\vs\tick-tac-toe\tick_tac-tow-4x4\GameWindow.h(105): warning C4538: 'cli::array<int,1>': 不支援這種類型上的 const/volatile 限定詞
+GameWindow.cpp(84): warning C4538: 'cli::array<int,1>': 不支援這種類型上的 const/volatile 限定詞
   Tick_Tac-Tow-4x4.cpp
-z:\google drive\extended year\oop\hw4\vs\tick-tac-toe\tick_tac-tow-4x4\GameWindow.h(89): warning C4538: 'cli::array<int,1>': 不支援這種類型上的 const/volatile 限定詞
+z:\google drive\extended year\oop\hw4\vs\tick-tac-toe\tick_tac-tow-4x4\GameWindow.h(105): warning C4538: 'cli::array<int,1>': 不支援這種類型上的 const/volatile 限定詞
   正在產生程式碼...
-  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
   AssemblyInfo.obj : Managed 程式碼存在時不支援 /DEBUG:FASTLINK; 正在以 /DEBUG:FULL 重新啟動連結
   Tick_Tac-Tow-4x4.vcxproj -> Z:\Google Drive\Extended year\OOP\hw4\VS\Tick-Tac-Toe\Debug\Tick_Tac-Tow-4x4.exe
   Tick_Tac-Tow-4x4.vcxproj -> Z:\Google Drive\Extended year\OOP\hw4\VS\Tick-Tac-Toe\Debug\Tick_Tac-Tow-4x4.pdb (Partial PDB)

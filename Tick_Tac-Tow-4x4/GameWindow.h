@@ -42,24 +42,40 @@ namespace Tick_TacTow4x4 {
 	private: System::Windows::Forms::StatusStrip^  statusStrip1;
 	private: System::Windows::Forms::ToolStripStatusLabel^  status_label_player;
 	private: System::Windows::Forms::ToolStripStatusLabel^  status_label_position;
-	private: System::Windows::Forms::Button^  button10;
-	private: System::Windows::Forms::Button^  button11;
-	private: System::Windows::Forms::Button^  button12;
-	private: System::Windows::Forms::Button^  button13;
-	private: System::Windows::Forms::Button^  button14;
-	private: System::Windows::Forms::Button^  button15;
-	private: System::Windows::Forms::Button^  button16;
+	private: System::Windows::Forms::Panel^  draw_area1;
+	private: System::Windows::Forms::Panel^  draw_area2;
+	private: System::Windows::Forms::Panel^  draw_area3;
+	private: System::Windows::Forms::Panel^  draw_area5;
+
+	private: System::Windows::Forms::Panel^  draw_area6;
+
+	private: System::Windows::Forms::Panel^  draw_area7;
+
+	private: System::Windows::Forms::Panel^  draw_area9;
+
+	private: System::Windows::Forms::Panel^  draw_area10;
+
+	private: System::Windows::Forms::Panel^  draw_area11;
+	private: System::Windows::Forms::Panel^  draw_area12;
+	private: System::Windows::Forms::Panel^  draw_area8;
+	private: System::Windows::Forms::Panel^  draw_area4;
 
 
+	private: System::Windows::Forms::Panel^  draw_area16;
+	private: System::Windows::Forms::Panel^  draw_area15;
+	private: System::Windows::Forms::Panel^  draw_area14;
+	private: System::Windows::Forms::Panel^  draw_area13;
 
-	//private: Button* buttonList = new Button[GAME_SIZE];
+
+			 //private: Button* buttonList = new Button[GAME_SIZE];
 
 	public:
 		char player;
+		char first_player;
 		GameWindow(void)
 		{
-		/*	for (int i = 0;i < GAME_SIZE;i++) {
-				this->buttonList[i] = gcnew array<Button^>(GAME_SIZE);
+			/*	for (int i = 0;i < GAME_SIZE;i++) {
+			this->buttonList[i] = gcnew array<Button^>(GAME_SIZE);
 			}*/
 			InitializeComponent();
 			this->status_label_player->Text = "";
@@ -88,21 +104,11 @@ namespace Tick_TacTow4x4 {
 		void checkWinner();
 		bool isWin(const array<int>^);
 		void changePlayer();
-		void setImage(Button ^);
 		bool setTable(int);
 		void stopGame();
 		void startGame(char);
 		void Timer_Tick(System::Object^, System::EventArgs^);
 
-	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::Button^  button2;
-	private: System::Windows::Forms::Button^  button3;
-	private: System::Windows::Forms::Button^  button4;
-	private: System::Windows::Forms::Button^  button5;
-	private: System::Windows::Forms::Button^  button6;
-	private: System::Windows::Forms::Button^  button7;
-	private: System::Windows::Forms::Button^  button8;
-	private: System::Windows::Forms::Button^  button9;
 	protected:
 
 	private:
@@ -111,7 +117,7 @@ namespace Tick_TacTow4x4 {
 		//	.Select(i = > (Button)this.Controls["button" + i.ToString()])
 		//	.ToList();
 		// create 2d array of buttons
-		
+
 		int round;
 		char turn;
 		bool gameStarted = false;
@@ -130,15 +136,6 @@ namespace Tick_TacTow4x4 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->radioButton_player2 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton_player1 = (gcnew System::Windows::Forms::RadioButton());
@@ -148,123 +145,44 @@ namespace Tick_TacTow4x4 {
 			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
 			this->status_label_player = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->status_label_position = (gcnew System::Windows::Forms::ToolStripStatusLabel());
-			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->button11 = (gcnew System::Windows::Forms::Button());
-			this->button12 = (gcnew System::Windows::Forms::Button());
-			this->button13 = (gcnew System::Windows::Forms::Button());
-			this->button14 = (gcnew System::Windows::Forms::Button());
-			this->button15 = (gcnew System::Windows::Forms::Button());
-			this->button16 = (gcnew System::Windows::Forms::Button());
+			this->draw_area1 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area2 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area3 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area5 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area6 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area7 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area9 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area10 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area11 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area12 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area8 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area4 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area16 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area15 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area14 = (gcnew System::Windows::Forms::Panel());
+			this->draw_area13 = (gcnew System::Windows::Forms::Panel());
 			this->panel1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(68, 62);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(100, 100);
-			this->button1->TabIndex = 0;
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button1->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(174, 62);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(100, 100);
-			this->button2->TabIndex = 1;
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button2->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
-			// 
-			// button3
-			// 
-			this->button3->Location = System::Drawing::Point(280, 62);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(100, 100);
-			this->button3->TabIndex = 2;
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button3->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
-			// 
-			// button4
-			// 
-			this->button4->Location = System::Drawing::Point(280, 168);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(100, 100);
-			this->button4->TabIndex = 6;
-			this->button4->UseVisualStyleBackColor = true;
-			this->button4->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button4->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
-			// 
-			// button5
-			// 
-			this->button5->Location = System::Drawing::Point(174, 168);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(100, 100);
-			this->button5->TabIndex = 5;
-			this->button5->UseVisualStyleBackColor = true;
-			this->button5->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button5->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
-			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(68, 168);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(100, 100);
-			this->button6->TabIndex = 4;
-			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button6->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
-			// 
-			// button7
-			// 
-			this->button7->Location = System::Drawing::Point(280, 274);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(100, 100);
-			this->button7->TabIndex = 10;
-			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button7->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
-			// 
-			// button8
-			// 
-			this->button8->Location = System::Drawing::Point(174, 274);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(100, 100);
-			this->button8->TabIndex = 9;
-			this->button8->UseVisualStyleBackColor = true;
-			this->button8->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button8->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
-			// 
-			// button9
-			// 
-			this->button9->Location = System::Drawing::Point(68, 274);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(100, 100);
-			this->button9->TabIndex = 8;
-			this->button9->UseVisualStyleBackColor = true;
-			this->button9->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button9->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
 			// 
 			// panel1
 			// 
 			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel1->Controls->Add(this->radioButton_player2);
 			this->panel1->Controls->Add(this->radioButton_player1);
-			this->panel1->Location = System::Drawing::Point(527, 80);
+			this->panel1->Location = System::Drawing::Point(1140, 186);
+			this->panel1->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(198, 85);
+			this->panel1->Size = System::Drawing::Size(427, 160);
 			this->panel1->TabIndex = 11;
 			// 
 			// radioButton_player2
 			// 
 			this->radioButton_player2->AutoSize = true;
-			this->radioButton_player2->Location = System::Drawing::Point(4, 39);
+			this->radioButton_player2->Location = System::Drawing::Point(9, 78);
+			this->radioButton_player2->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
 			this->radioButton_player2->Name = L"radioButton_player2";
-			this->radioButton_player2->Size = System::Drawing::Size(53, 16);
+			this->radioButton_player2->Size = System::Drawing::Size(100, 28);
 			this->radioButton_player2->TabIndex = 1;
 			this->radioButton_player2->Text = L"玩家2";
 			this->radioButton_player2->UseVisualStyleBackColor = true;
@@ -273,9 +191,10 @@ namespace Tick_TacTow4x4 {
 			// 
 			this->radioButton_player1->AutoSize = true;
 			this->radioButton_player1->Checked = true;
-			this->radioButton_player1->Location = System::Drawing::Point(4, 17);
+			this->radioButton_player1->Location = System::Drawing::Point(9, 34);
+			this->radioButton_player1->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
 			this->radioButton_player1->Name = L"radioButton_player1";
-			this->radioButton_player1->Size = System::Drawing::Size(53, 16);
+			this->radioButton_player1->Size = System::Drawing::Size(100, 28);
 			this->radioButton_player1->TabIndex = 0;
 			this->radioButton_player1->TabStop = true;
 			this->radioButton_player1->Text = L"玩家1";
@@ -284,21 +203,23 @@ namespace Tick_TacTow4x4 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(527, 62);
+			this->label1->Location = System::Drawing::Point(1140, 150);
+			this->label1->Margin = System::Windows::Forms::Padding(7, 0, 7, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(46, 12);
+			this->label1->Size = System::Drawing::Size(91, 24);
 			this->label1->TabIndex = 12;
 			this->label1->Text = L"先手 (o)";
 			// 
 			// start_btn
 			// 
-			this->start_btn->Location = System::Drawing::Point(527, 226);
+			this->start_btn->Location = System::Drawing::Point(1140, 478);
+			this->start_btn->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
 			this->start_btn->Name = L"start_btn";
-			this->start_btn->Size = System::Drawing::Size(198, 35);
+			this->start_btn->Size = System::Drawing::Size(429, 62);
 			this->start_btn->TabIndex = 13;
 			this->start_btn->Text = L"START";
 			this->start_btn->UseVisualStyleBackColor = true;
-			this->start_btn->Click += gcnew System::EventHandler(this, &GameWindow::button10_Click);
+			this->start_btn->Click += gcnew System::EventHandler(this, &GameWindow::start_btn_Click);
 			// 
 			// time_label
 			// 
@@ -306,134 +227,277 @@ namespace Tick_TacTow4x4 {
 			this->time_label->BackColor = System::Drawing::SystemColors::Info;
 			this->time_label->Font = (gcnew System::Drawing::Font(L"新細明體", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(136)));
-			this->time_label->Location = System::Drawing::Point(527, 273);
-			this->time_label->MinimumSize = System::Drawing::Size(200, 0);
+			this->time_label->Location = System::Drawing::Point(1140, 572);
+			this->time_label->Margin = System::Windows::Forms::Padding(7, 0, 7, 0);
+			this->time_label->MinimumSize = System::Drawing::Size(433, 0);
 			this->time_label->Name = L"time_label";
-			this->time_label->Size = System::Drawing::Size(200, 27);
+			this->time_label->Size = System::Drawing::Size(433, 54);
 			this->time_label->TabIndex = 14;
 			this->time_label->Text = L"Time";
 			this->time_label->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// statusStrip1
 			// 
+			this->statusStrip1->ImageScalingSize = System::Drawing::Size(32, 32);
 			this->statusStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
 				this->status_label_player,
 					this->status_label_position
 			});
-			this->statusStrip1->Location = System::Drawing::Point(0, 518);
+			this->statusStrip1->Location = System::Drawing::Point(0, 1143);
 			this->statusStrip1->Name = L"statusStrip1";
-			this->statusStrip1->Size = System::Drawing::Size(845, 22);
+			this->statusStrip1->Padding = System::Windows::Forms::Padding(2, 0, 30, 0);
+			this->statusStrip1->Size = System::Drawing::Size(1937, 35);
 			this->statusStrip1->TabIndex = 15;
 			this->statusStrip1->Text = L"statusStrip1";
 			// 
 			// status_label_player
 			// 
 			this->status_label_player->Name = L"status_label_player";
-			this->status_label_player->Size = System::Drawing::Size(128, 17);
+			this->status_label_player->Size = System::Drawing::Size(256, 30);
 			this->status_label_player->Text = L"toolStripStatusLabel1";
 			// 
 			// status_label_position
 			// 
 			this->status_label_position->Name = L"status_label_position";
-			this->status_label_position->Size = System::Drawing::Size(128, 17);
+			this->status_label_position->Size = System::Drawing::Size(256, 30);
 			this->status_label_position->Text = L"toolStripStatusLabel2";
 			// 
-			// button10
+			// draw_area1
 			// 
-			this->button10->Location = System::Drawing::Point(386, 274);
-			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(100, 100);
-			this->button10->TabIndex = 11;
-			this->button10->UseVisualStyleBackColor = true;
-			this->button10->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button10->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
+			this->draw_area1->BackColor = System::Drawing::Color::White;
+			this->draw_area1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area1->Location = System::Drawing::Point(165, 146);
+			this->draw_area1->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area1->Name = L"draw_area1";
+			this->draw_area1->Size = System::Drawing::Size(217, 200);
+			this->draw_area1->TabIndex = 0;
+			this->draw_area1->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area1->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
 			// 
-			// button11
+			// draw_area2
 			// 
-			this->button11->Location = System::Drawing::Point(386, 168);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(100, 100);
-			this->button11->TabIndex = 7;
-			this->button11->UseVisualStyleBackColor = true;
-			this->button11->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button11->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
+			this->draw_area2->BackColor = System::Drawing::Color::White;
+			this->draw_area2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area2->Location = System::Drawing::Point(381, 146);
+			this->draw_area2->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area2->Name = L"draw_area2";
+			this->draw_area2->Size = System::Drawing::Size(217, 200);
+			this->draw_area2->TabIndex = 1;
+			this->draw_area2->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area2->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
 			// 
-			// button12
+			// draw_area3
 			// 
-			this->button12->Location = System::Drawing::Point(386, 62);
-			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(100, 100);
-			this->button12->TabIndex = 3;
-			this->button12->UseVisualStyleBackColor = true;
-			this->button12->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button12->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
+			this->draw_area3->BackColor = System::Drawing::Color::White;
+			this->draw_area3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area3->Location = System::Drawing::Point(598, 146);
+			this->draw_area3->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area3->Name = L"draw_area3";
+			this->draw_area3->Size = System::Drawing::Size(217, 200);
+			this->draw_area3->TabIndex = 2;
+			this->draw_area3->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area3->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
 			// 
-			// button13
+			// draw_area5
 			// 
-			this->button13->Location = System::Drawing::Point(386, 380);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(100, 100);
-			this->button13->TabIndex = 15;
-			this->button13->UseVisualStyleBackColor = true;
-			this->button13->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button13->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
+			this->draw_area5->BackColor = System::Drawing::Color::White;
+			this->draw_area5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area5->Location = System::Drawing::Point(165, 346);
+			this->draw_area5->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area5->Name = L"draw_area5";
+			this->draw_area5->Size = System::Drawing::Size(217, 200);
+			this->draw_area5->TabIndex = 4;
+			this->draw_area5->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area5->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area5->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
 			// 
-			// button14
+			// draw_area6
 			// 
-			this->button14->Location = System::Drawing::Point(280, 380);
-			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(100, 100);
-			this->button14->TabIndex = 14;
-			this->button14->UseVisualStyleBackColor = true;
-			this->button14->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button14->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
+			this->draw_area6->BackColor = System::Drawing::Color::White;
+			this->draw_area6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area6->Location = System::Drawing::Point(381, 346);
+			this->draw_area6->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area6->Name = L"draw_area6";
+			this->draw_area6->Size = System::Drawing::Size(217, 200);
+			this->draw_area6->TabIndex = 5;
+			this->draw_area6->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area6->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area6->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
 			// 
-			// button15
+			// draw_area7
 			// 
-			this->button15->Location = System::Drawing::Point(174, 380);
-			this->button15->Name = L"button15";
-			this->button15->Size = System::Drawing::Size(100, 100);
-			this->button15->TabIndex = 13;
-			this->button15->UseVisualStyleBackColor = true;
-			this->button15->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button15->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
+			this->draw_area7->BackColor = System::Drawing::Color::White;
+			this->draw_area7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area7->Location = System::Drawing::Point(598, 346);
+			this->draw_area7->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area7->Name = L"draw_area7";
+			this->draw_area7->Size = System::Drawing::Size(217, 200);
+			this->draw_area7->TabIndex = 6;
+			this->draw_area7->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area7->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area7->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
 			// 
-			// button16
+			// draw_area9
 			// 
-			this->button16->Location = System::Drawing::Point(68, 380);
-			this->button16->Name = L"button16";
-			this->button16->Size = System::Drawing::Size(100, 100);
-			this->button16->TabIndex = 12;
-			this->button16->UseVisualStyleBackColor = true;
-			this->button16->Click += gcnew System::EventHandler(this, &GameWindow::button1_Click);
-			this->button16->MouseHover += gcnew System::EventHandler(this, &GameWindow::button1_MouseHover);
+			this->draw_area9->BackColor = System::Drawing::Color::White;
+			this->draw_area9->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area9->Location = System::Drawing::Point(165, 546);
+			this->draw_area9->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area9->Name = L"draw_area9";
+			this->draw_area9->Size = System::Drawing::Size(217, 200);
+			this->draw_area9->TabIndex = 8;
+			this->draw_area9->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area9->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area9->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
+			// 
+			// draw_area10
+			// 
+			this->draw_area10->BackColor = System::Drawing::Color::White;
+			this->draw_area10->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area10->Location = System::Drawing::Point(381, 546);
+			this->draw_area10->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area10->Name = L"draw_area10";
+			this->draw_area10->Size = System::Drawing::Size(217, 200);
+			this->draw_area10->TabIndex = 9;
+			this->draw_area10->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area10->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area10->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
+			// 
+			// draw_area11
+			// 
+			this->draw_area11->BackColor = System::Drawing::Color::White;
+			this->draw_area11->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area11->Location = System::Drawing::Point(598, 546);
+			this->draw_area11->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area11->Name = L"draw_area11";
+			this->draw_area11->Size = System::Drawing::Size(217, 200);
+			this->draw_area11->TabIndex = 10;
+			this->draw_area11->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area11->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area11->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
+			// 
+			// draw_area12
+			// 
+			this->draw_area12->BackColor = System::Drawing::Color::White;
+			this->draw_area12->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area12->Location = System::Drawing::Point(815, 546);
+			this->draw_area12->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area12->Name = L"draw_area12";
+			this->draw_area12->Size = System::Drawing::Size(217, 200);
+			this->draw_area12->TabIndex = 11;
+			this->draw_area12->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area12->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area12->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
+			// 
+			// draw_area8
+			// 
+			this->draw_area8->BackColor = System::Drawing::Color::White;
+			this->draw_area8->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area8->Location = System::Drawing::Point(815, 346);
+			this->draw_area8->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area8->Name = L"draw_area8";
+			this->draw_area8->Size = System::Drawing::Size(217, 200);
+			this->draw_area8->TabIndex = 7;
+			this->draw_area8->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area8->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area8->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
+			// 
+			// draw_area4
+			// 
+			this->draw_area4->BackColor = System::Drawing::Color::White;
+			this->draw_area4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area4->Location = System::Drawing::Point(815, 146);
+			this->draw_area4->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area4->Name = L"draw_area4";
+			this->draw_area4->Size = System::Drawing::Size(217, 200);
+			this->draw_area4->TabIndex = 3;
+			this->draw_area4->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area4->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area4->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
+			// 
+			// draw_area16
+			// 
+			this->draw_area16->BackColor = System::Drawing::Color::White;
+			this->draw_area16->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area16->Location = System::Drawing::Point(815, 746);
+			this->draw_area16->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area16->Name = L"draw_area16";
+			this->draw_area16->Size = System::Drawing::Size(217, 200);
+			this->draw_area16->TabIndex = 15;
+			this->draw_area16->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area16->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area16->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
+			// 
+			// draw_area15
+			// 
+			this->draw_area15->BackColor = System::Drawing::Color::White;
+			this->draw_area15->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area15->Location = System::Drawing::Point(598, 746);
+			this->draw_area15->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area15->Name = L"draw_area15";
+			this->draw_area15->Size = System::Drawing::Size(217, 200);
+			this->draw_area15->TabIndex = 14;
+			this->draw_area15->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area15->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area15->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
+			// 
+			// draw_area14
+			// 
+			this->draw_area14->BackColor = System::Drawing::Color::White;
+			this->draw_area14->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area14->Location = System::Drawing::Point(381, 746);
+			this->draw_area14->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area14->Name = L"draw_area14";
+			this->draw_area14->Size = System::Drawing::Size(217, 200);
+			this->draw_area14->TabIndex = 13;
+			this->draw_area14->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area14->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area14->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
+			// 
+			// draw_area13
+			// 
+			this->draw_area13->BackColor = System::Drawing::Color::White;
+			this->draw_area13->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->draw_area13->Location = System::Drawing::Point(165, 746);
+			this->draw_area13->Margin = System::Windows::Forms::Padding(0);
+			this->draw_area13->Name = L"draw_area13";
+			this->draw_area13->Size = System::Drawing::Size(217, 200);
+			this->draw_area13->TabIndex = 12;
+			this->draw_area13->Click += gcnew System::EventHandler(this, &GameWindow::draw_area_Click);
+			this->draw_area13->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GameWindow::draw_area_Paint);
+			this->draw_area13->MouseHover += gcnew System::EventHandler(this, &GameWindow::draw_area_MouseHover);
 			// 
 			// GameWindow
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
+			this->AutoScaleDimensions = System::Drawing::SizeF(13, 24);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(845, 540);
-			this->Controls->Add(this->button13);
-			this->Controls->Add(this->button14);
-			this->Controls->Add(this->button15);
-			this->Controls->Add(this->button16);
-			this->Controls->Add(this->button10);
-			this->Controls->Add(this->button11);
-			this->Controls->Add(this->button12);
+			this->AutoSize = true;
+			this->ClientSize = System::Drawing::Size(1937, 1178);
+			this->Controls->Add(this->draw_area16);
+			this->Controls->Add(this->draw_area12);
+			this->Controls->Add(this->draw_area15);
+			this->Controls->Add(this->draw_area11);
+			this->Controls->Add(this->draw_area14);
+			this->Controls->Add(this->draw_area8);
+			this->Controls->Add(this->draw_area13);
+			this->Controls->Add(this->draw_area10);
+			this->Controls->Add(this->draw_area4);
+			this->Controls->Add(this->draw_area9);
+			this->Controls->Add(this->draw_area7);
+			this->Controls->Add(this->draw_area6);
+			this->Controls->Add(this->draw_area5);
+			this->Controls->Add(this->draw_area3);
+			this->Controls->Add(this->draw_area2);
+			this->Controls->Add(this->draw_area1);
 			this->Controls->Add(this->statusStrip1);
 			this->Controls->Add(this->time_label);
 			this->Controls->Add(this->start_btn);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->button7);
-			this->Controls->Add(this->button8);
-			this->Controls->Add(this->button9);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button5);
-			this->Controls->Add(this->button6);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
+			this->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
 			this->Name = L"GameWindow";
 			this->Text = L"GameWindow";
 			this->Load += gcnew System::EventHandler(this, &GameWindow::GameWindow_Load);
@@ -447,53 +511,64 @@ namespace Tick_TacTow4x4 {
 		}
 #pragma endregion
 
-	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
-		this->label1->Text = "Clicked";
-		Image ^i = Image::FromFile("image.jpeg");
-		this->label1->Size = System::Drawing::Size(i->Width, i->Height);
-		this->label1->Image = i;
-	}
-
 	private: System::Void GameWindow_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
 
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		Button^ button = (Button^)sender;
-		
+
+	private: System::Void draw_area_MouseHover(System::Object^  sender, System::EventArgs^  e) {
+		Panel^ panel = (Panel^)sender;
+		int index = panel->TabIndex;
+		int row = index / GAME_SIZE + 1;
+		int col = index % GAME_SIZE + 1;
+		this->status_label_position->Text = "Mouse Current position: (" + row + ", " + col + ")";
+	}
+
+	private: System::Void start_btn_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (this->start_btn->Text == "START") {
+			char newPlayer = PLAYER_1;
+			if (this->radioButton_player2->Checked == true) {
+				newPlayer = PLAYER_2;
+			}
+			this->start_btn->Text = "STOP";
+			startGame(newPlayer);
+		}
+		else {
+			this->start_btn->Text = "START";
+			stopGame();
+		}
+
+	}
+
+
+	private: System::Void draw_area_Click(System::Object^  sender, System::EventArgs^  e) {
+		Panel^ panel = (Panel^)sender;
+		Graphics^ g = panel->CreateGraphics();
+
 		if (gameStarted == true) {
-			int index = button->TabIndex;
+			int index = panel->TabIndex;
 			if (setTable(index) == false) return;
 			round++;
-			setImage(button);
-			changePlayer();
+
+			panel->Invalidate();
+			
 			checkWinner();
+			changePlayer();
 		}
 	}
+	private: System::Void draw_area_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+		Panel^ panel = (Panel^)sender;
+		Graphics^ g = panel->CreateGraphics();
 
-private: System::Void button1_MouseHover(System::Object^  sender, System::EventArgs^  e) {
-	Button^ button = (Button^)sender;
-	int index = button->TabIndex;
-	int row = index / GAME_SIZE + 1;
-	int col = index % GAME_SIZE + 1;
-	this->status_label_position->Text ="Mouse Current position: (" + row + ", " + col + ")";
-}
-
-private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
-	if (this->start_btn->Text == "START") {
-		char newPlayer = PLAYER_1;
-		if (this->radioButton_player2->Checked == true) {
-			newPlayer = PLAYER_2;
+		if (circle_table[panel->TabIndex] == 1) {
+			g->DrawEllipse(Pens::Blue, Rectangle(10, 10, 80, 80));
 		}
-		this->start_btn->Text = "STOP";
-		startGame(newPlayer);
-	}
-	else {
-		this->start_btn->Text = "START";
-		stopGame();
-	}
-	
-}
+		else if (cross_table[panel->TabIndex] == 1) {
+			g->DrawLine(Pens::Black, 20, 20, 80, 80);
+			g->DrawLine(Pens::Black, 80, 20, 20, 80);
+		}
 
+	}
 
-};
+	};
+
 }

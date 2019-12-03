@@ -22,4 +22,5 @@ Class TickTacToe.GameWindow: AutoLayout, AnsiClass, Class, Public, BeforeFieldIn
     System.Drawing.Image cross_img : Public
     Int32[] circle_table : Public
     Int32[] cross_table : Public
-    SByte player IsSignUnspecifiedByte : Public
+    Boolean player : Public
+    Boolean first_player : Public

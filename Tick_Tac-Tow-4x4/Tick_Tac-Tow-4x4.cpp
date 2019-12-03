@@ -1,4 +1,7 @@
-
+/**************************************
+* Copyright(c) 2019 ICheng Chen ³¯©ö¦¨ E14046583
+* All rights reserved.
+***************************************/
 #include "stdafx.h"
 #include "GameWindow.h"
 
